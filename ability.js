@@ -10,10 +10,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     abilityData.pokemon.forEach(pokemonEntry => {
         const pokemonCard = document.createElement('div');
         pokemonCard.classList.add('pokemon-card');
-        pokemonCard.textContent = pokemonEntry.pokemon.name;
+
+        const pokemonImage = document.createElement('img');
+        pokemonImage.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonEntry.pokemon.url.split('/')[6]}.png`;
+        pokemonCard.appendChild(pokemonImage);
+
+        const pokemonName = document.createElement('p');
+        pokemonName.textContent = pokemonEntry.pokemon.name;
+        pokemonCard.appendChild(pokemonName);
+
         pokemonCard.addEventListener('click', () => {
             window.location.href = `pokemon.html?name=${pokemonEntry.pokemon.name}`;
         });
+
         abilityList.appendChild(pokemonCard);
     });
 });
