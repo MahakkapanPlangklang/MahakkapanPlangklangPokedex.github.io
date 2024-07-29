@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
     const pokemonName = params.get('name');
-    
+
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
     const pokemon = await response.json();
 
