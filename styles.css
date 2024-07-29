@@ -3,34 +3,70 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f0f0f0;
 }
 
-.container {
-    max-width: 800px;
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header input {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+main {
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-#pokemon-list, #type-list, #ability-list {
+/* Pokémon Card Grid */
+.pokemon-grid {
     display: flex;
     flex-wrap: wrap;
+    gap: 15px;
     justify-content: center;
 }
 
-.pokemon-card, .pokemon-card-detail {
-    border: 1px solid #ccc;
+.pokemon-card {
+    background-color: white;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
+    padding: 15px;
     width: 150px;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.pokemon-card img, .pokemon-card-detail img {
+.pokemon-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-card img {
     width: 100px;
     height: 100px;
 }
 
+.pokemon-card p {
+    margin: 10px 0 0;
+}
+
+/* Button Styles */
 button {
     display: block;
     margin: 20px auto;
@@ -40,6 +76,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
@@ -48,7 +85,7 @@ button:hover {
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    .pokemon-card, .pokemon-card-detail {
+    .pokemon-card {
         width: 100%;
     }
 }
